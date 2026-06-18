@@ -1,0 +1,13 @@
+ProgressBar
+Control
+CanvasLayer
+CollisionShape2D
+Area2D
+AudioStreamPlayer2D
+CharacterBody2D
+AnimatedSprite2D
+Sprite2D
+ParallaxLayer
+ParallaxBackground
+StaticBody2D
+Camera2D

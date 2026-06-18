@@ -1,0 +1,8 @@
+res://character_body_2d.tscn
+res://game.tscn
+res://stag_knight.tscn
+res://character_body_2d.gd
+res://wearwolf.tscn
+res://wearwolf_enemy.gd
+res://boss_fight_1.tscn
+res://hud.gd

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://u1v4uv0klmwu"]
+
+[ext_resource type="AudioStream" uid="uid://d26yj5df6td0k" path="res://The Wanderer/GQc92nHJtWU.wav" id="1_j04oj"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=156734411]
+stream = ExtResource("1_j04oj")
+autoplay = true
