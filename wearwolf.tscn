@@ -524,7 +524,7 @@ animations = [{
 radius = 18.35756
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcqpk"]
-size = Vector2(62, 117.5)
+size = Vector2(66, 73)
 
 [node name="Node2D" type="Node2D" unique_id=1238227720]
 
@@ -548,5 +548,5 @@ position = Vector2(-62, 7)
 collision_layer = 4
 
 [node name="Hitbox Shape" type="CollisionShape2D" parent="CharacterBody2D/Hitbox" unique_id=1357164744]
-position = Vector2(9, -40)
+position = Vector2(11, -18.5)
 shape = SubResource("RectangleShape2D_pcqpk")

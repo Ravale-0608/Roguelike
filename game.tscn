@@ -3,7 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://df1x377xt5q1o" path="res://character_body_2d.tscn" id="1_80nbo"]
 [ext_resource type="Texture2D" uid="uid://c58mo6j52r5kj" path="res://The Wanderer/Haunted Forest Parallaxing Background/forest_initial.png" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://c80g3dr8w2wk4" path="res://wearwolf.tscn" id="3_feb5d"]
+[ext_resource type="Shader" uid="uid://cbc6s0vtv8sqw" path="res://fog.gdshader" id="4_7jktm"]
 [ext_resource type="Script" uid="uid://c18rjw1hydbtx" path="res://hud.gd" id="4_fc0e3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ryrav"]
+frequency = 0.0075
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eow3j"]
+width = 1152
+height = 648
+noise = SubResource("FastNoiseLite_ryrav")
+seamless = true
+seamless_blend_skirt = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5wjh"]
+shader = ExtResource("4_7jktm")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_eow3j")
+shader_parameter/density = 0.0
+shader_parameter/speed = Vector2(0.02, 0.01)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
 distance = 1.0
@@ -22,6 +39,15 @@ bg_color = Color(0.61863637, 0, 0.017512085, 1)
 
 [node name="Game" type="Node2D" unique_id=75735027]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1219551919]
+visibility_layer = 4
+z_index = -3
+material = SubResource("ShaderMaterial_j5wjh")
+offset_left = -284.0
+offset_top = -329.0
+offset_right = 868.0
+offset_bottom = 319.0
+
 [node name="Forsaken Prince" parent="." unique_id=569917713 instance=ExtResource("1_80nbo")]
 position = Vector2(3, 11)
 
@@ -39,11 +65,13 @@ position = Vector2(3, 13)
 shape = SubResource("WorldBoundaryShape2D_e2o6t")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=839565774]
+layer = -1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=753642207]
+motion_mirroring = Vector2(1152, 648)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=335346627]
-position = Vector2(6, -143)
+position = Vector2(6, -144)
 scale = Vector2(1.4385965, 1.254358)
 texture = ExtResource("2_e2o6t")
 

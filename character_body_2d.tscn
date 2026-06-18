@@ -874,7 +874,7 @@ animations = [{
 radius = 9.055386
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnedo"]
-size = Vector2(52.392944, 58.37005)
+size = Vector2(31.435768, 41.233482)
 
 [node name="Forsaken Prince" type="CharacterBody2D" unique_id=569917713]
 script = ExtResource("1_1kp85")
@@ -895,6 +895,6 @@ position = Vector2(-1.0000076, -61.000004)
 scale = Vector2(1.240625, 1.2611111)
 
 [node name="Hitbox shape" type="CollisionShape2D" parent="Prince Hitbox" unique_id=628543062]
-position = Vector2(1.209074, 19.185022)
+position = Vector2(-0.4030165, 27.753305)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_qnedo")

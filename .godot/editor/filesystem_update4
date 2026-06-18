@@ -6,3 +6,5 @@ res://wearwolf.tscn
 res://wearwolf_enemy.gd
 res://boss_fight_1.tscn
 res://hud.gd
+res://fog.gd
+res://fog.gdshader
