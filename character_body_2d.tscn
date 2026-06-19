@@ -926,7 +926,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0hxeb")
 }, {
-"duration": 1.0,
+"duration": 0.9,
 "texture": SubResource("AtlasTexture_3vqrq")
 }],
 "loop": true,
@@ -1029,9 +1029,8 @@ script = ExtResource("1_1kp85")
 position = Vector2(3.0000007, -61.000004)
 scale = Vector2(1.240625, 1.2611111)
 sprite_frames = SubResource("SpriteFrames_xd1k1")
-animation = &"Jumping Slash"
+animation = &"Air Attack"
 autoplay = "Idle"
-frame_progress = 0.07115416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=711609054]
 position = Vector2(-3, -36)
