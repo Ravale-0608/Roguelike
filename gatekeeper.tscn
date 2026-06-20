@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cf7rl72jsbo4m"]
+
+[ext_resource type="Texture2D" uid="uid://coeknf6dn3jne" path="res://The Wanderer/Gatekeeper/HellsGateKeeper_Attack_v3.png" id="1_knmq8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqpkp"]
+atlas = ExtResource("1_knmq8")
+region = Rect2(0, 0, 736, 1408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nf8r8"]
+atlas = ExtResource("1_knmq8")
+region = Rect2(736, 0, 736, 1408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwrxl"]
+atlas = ExtResource("1_knmq8")
+region = Rect2(1472, 0, 736, 1408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyobd"]
+atlas = ExtResource("1_knmq8")
+region = Rect2(2208, 0, 736, 1408)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_27uab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqpkp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nf8r8")
+}, {
+"duration": 9.3,
+"texture": SubResource("AtlasTexture_fwrxl")
+}, {
+"duration": 1.6,
+"texture": SubResource("AtlasTexture_wyobd")
+}],
+"loop": true,
+"name": &"ground smash",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7iukd"]
+radius = 53.15073
+
+[node name="Gatekeeper" type="CharacterBody2D" unique_id=465675574]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=559560135]
+position = Vector2(-6.999999, -322)
+scale = Vector2(1.2490951, 0.9932862)
+sprite_frames = SubResource("SpriteFrames_27uab")
+animation = &"ground smash"
+autoplay = "ground smash"
+frame_progress = 0.37930956
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1605428742]
+position = Vector2(18, -103)
+shape = SubResource("CircleShape2D_7iukd")

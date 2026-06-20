@@ -1017,23 +1017,23 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qnedo"]
-radius = 9.055386
+radius = 19.026299
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnedo"]
-size = Vector2(31.435768, 41.233482)
+size = Vector2(46.750626, 149.86786)
 
 [node name="Forsaken Prince" type="CharacterBody2D" unique_id=569917713]
 script = ExtResource("1_1kp85")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1781056321]
-position = Vector2(3.0000007, -61.000004)
-scale = Vector2(1.240625, 1.2611111)
+position = Vector2(48.000004, -183.47949)
+scale = Vector2(3.0973902, 3.7426903)
 sprite_frames = SubResource("SpriteFrames_xd1k1")
 animation = &"Air Attack"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=711609054]
-position = Vector2(-3, -36)
+position = Vector2(5, -49)
 shape = SubResource("CircleShape2D_qnedo")
 
 [node name="Prince Hitbox" type="Area2D" parent="." unique_id=1437716272]
@@ -1041,6 +1041,6 @@ position = Vector2(0.99999976, -61)
 scale = Vector2(1.240625, 1.2611111)
 
 [node name="Hitbox shape" type="CollisionShape2D" parent="Prince Hitbox" unique_id=628543062]
-position = Vector2(-0.4030165, 27.753305)
+position = Vector2(8.0604515, -32.114536)
 scale = Vector2(0.9999999, 1)
 shape = SubResource("RectangleShape2D_qnedo")

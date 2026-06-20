@@ -1,4 +1,8 @@
 res://character_body_2d.tscn
 res://fog.gdshader
+res://wearwolf.tscn
 res://game.tscn
 res://character_body_2d.gd
+res://hud.gd
+res://gatekeeper.tscn
+res://The Wanderer/Gatekeeper/damnedpriest.tscn

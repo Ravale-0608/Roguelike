@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cbwnvnfcvgogk"]
+
+[ext_resource type="Texture2D" uid="uid://xn7jbxuyic2k" path="res://The Wanderer/Gatekeeper/79cab30e-8108-43e2-b74c-4d1e7172c2ba.png" id="1_ul0c6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arer4"]
+atlas = ExtResource("1_ul0c6")
+region = Rect2(0, 0, 384, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar57x"]
+atlas = ExtResource("1_ul0c6")
+region = Rect2(384, 0, 384, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qy500"]
+atlas = ExtResource("1_ul0c6")
+region = Rect2(775, 0, 380, 1024)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ul0c6"]
+atlas = ExtResource("1_ul0c6")
+region = Rect2(1151, 0, 382, 1024)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gr21x"]
+animations = [{
+"frames": [{
+"duration": 12.4,
+"texture": SubResource("AtlasTexture_arer4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar57x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qy500")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ul0c6")
+}],
+"loop": true,
+"name": &"Priestly Action",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ul0c6"]
+radius = 38.797974
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=679023702]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2102055235]
+position = Vector2(62, -139)
+scale = Vector2(1.2945933, 1.4453124)
+sprite_frames = SubResource("SpriteFrames_gr21x")
+animation = &"Priestly Action"
+autoplay = "Priestly Action"
+frame_progress = 0.12380462
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423140251]
+position = Vector2(22.000002, -134.99997)
+scale = Vector2(2.0368729, 1.9892578)
+shape = SubResource("CircleShape2D_ul0c6")

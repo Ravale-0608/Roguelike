@@ -4,20 +4,15 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -650.0
 const ROLL_SPEED = 220.0
 const DOUBLE_TAP_TIME = 0.3
-const MAX_HEALTH = 150.0
 const HEAVY_ATTACK_HOLD_TIME = 0.4
 
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var hitbox = $"Prince Hitbox"
 
 var is_attacking = false
 var is_heavy_attacking = false
 var is_blocking = false
 var is_rolling = false
-var is_dead = false
-var is_dying = false
 var attack_finished = false
-var health = MAX_HEALTH
 
 var last_tap_right = 0.0
 var last_tap_left = 0.0
@@ -31,47 +26,12 @@ func _ready():
 	animated_sprite.animation_changed.connect(_on_animation_changed)
 	animated_sprite.frame_changed.connect(_on_frame_changed)
 	animated_sprite.speed_scale = 1.5
-	hitbox.monitoring = false
-	hitbox.body_entered.connect(_on_hitbox_body_entered)
-	_update_health_bar()
-
-func _update_health_bar():
-	var hud = get_tree().get_first_node_in_group("hud")
-	if hud:
-		hud.update_player_health(health)
-
-func _on_hitbox_body_entered(body):
-	if body.is_in_group("wolf"):
-		var damage = 20.0
-		body.take_damage(damage)
-
-func take_damage(amount):
-	if is_dead:
-		return
-	if is_blocking:
-		amount *= 0.2
-	health -= amount
-	health = max(health, 0.0)
-	_update_health_bar()
-	print("Player health: ", health)
-	if health <= 0:
-		die()
-
-func die():
-	is_dead = true
-	is_dying = true
-	velocity.x = 0
-	hitbox.monitoring = false
 
 func _on_animation_finished():
-	if is_dead:
-		animated_sprite.stop()
-		return
 	if is_attacking or is_heavy_attacking:
 		is_attacking = false
 		is_heavy_attacking = false
 		attack_finished = true
-		hitbox.monitoring = false
 		jump_attack_done = false
 	if is_rolling:
 		is_rolling = false
@@ -89,20 +49,6 @@ func _on_frame_changed():
 		animated_sprite.speed_scale = 1.5
 
 func _physics_process(delta: float) -> void:
-	# Dying
-	if is_dying:
-		if not is_on_floor():
-			velocity += get_gravity() * delta
-		else:
-			is_dying = false
-			velocity = Vector2.ZERO
-			animated_sprite.play("Death_Blood")
-		move_and_slide()
-		return
-
-	if is_dead:
-		return
-
 	# Gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -135,17 +81,14 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_released("Attack"):
 			if attack_hold_timer >= HEAVY_ATTACK_HOLD_TIME:
 				is_heavy_attacking = true
-				hitbox.monitoring = true
 			else:
 				is_attacking = true
-				hitbox.monitoring = true
 			attack_hold_timer = 0.0
 
 	# Air attack on button press
 	if not is_on_floor() and not jump_attack_done and not attack_finished and not is_attacking:
 		if Input.is_action_just_pressed("Attack"):
 			is_attacking = true
-			hitbox.monitoring = true
 			jump_attack_done = true
 
 	# Block — ground only
