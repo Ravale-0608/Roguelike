@@ -1,8 +1,5 @@
-res://character_body_2d.tscn
-res://fog.gdshader
-res://wearwolf.tscn
 res://game.tscn
-res://character_body_2d.gd
-res://hud.gd
+res://fog.gdshader
 res://gatekeeper.tscn
-res://The Wanderer/Gatekeeper/damnedpriest.tscn
+res://The Wanderer/Gatekeeper/hellishmonster.tscn
+res://character_body_2d.tscn

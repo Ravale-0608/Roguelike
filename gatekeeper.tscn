@@ -21,16 +21,16 @@ region = Rect2(2208, 0, 736, 1408)
 [sub_resource type="SpriteFrames" id="SpriteFrames_27uab"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_hqpkp")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": SubResource("AtlasTexture_nf8r8")
 }, {
-"duration": 9.3,
+"duration": 15.8,
 "texture": SubResource("AtlasTexture_fwrxl")
 }, {
-"duration": 1.6,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wyobd")
 }],
 "loop": true,
@@ -49,7 +49,7 @@ scale = Vector2(1.2490951, 0.9932862)
 sprite_frames = SubResource("SpriteFrames_27uab")
 animation = &"ground smash"
 autoplay = "ground smash"
-frame_progress = 0.37930956
+frame_progress = 0.80411905
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1605428742]
 position = Vector2(18, -103)
