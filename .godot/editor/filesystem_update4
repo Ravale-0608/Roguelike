@@ -1,5 +1,2 @@
-res://game.tscn
-res://fog.gdshader
-res://gatekeeper.tscn
-res://The Wanderer/Gatekeeper/hellishmonster.tscn
 res://character_body_2d.tscn
+res://fog.gdshader

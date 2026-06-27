@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xpctedt6wlgl"
-path="res://.godot/imported/idle_gridded (1).png-d8c70ee60e65414c21c70abce12d2f60.ctex"
+uid="uid://de5bu088nbu7x"
+path="res://.godot/imported/move.png-6cb3c8523b66aabc7e68028d2adb0045.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://The Wanderer/Gatekeeper/Prince Hamlet/idle_gridded (1).png"
-dest_files=["res://.godot/imported/idle_gridded (1).png-d8c70ee60e65414c21c70abce12d2f60.ctex"]
+source_file="res://The Wanderer/Gatekeeper/Prince Hamlet/move.png"
+dest_files=["res://.godot/imported/move.png-6cb3c8523b66aabc7e68028d2adb0045.ctex"]
 
 [params]
 
